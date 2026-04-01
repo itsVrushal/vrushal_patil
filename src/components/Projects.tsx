@@ -90,9 +90,9 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {"link" in project && project.link && (
+                {(project as { link?: string }).link && (
                   <a
-                    href={project.link}
+                    href={(project as { link?: string }).link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-neon-pink hover:text-neon-cyan transition-colors text-sm font-bold"
