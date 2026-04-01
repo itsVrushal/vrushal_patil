@@ -15,23 +15,14 @@ export const education = {
   period: "Nov 2022 – May 2026",
   cgpa: "9.06",
 };
-
+export const address = {
+  place: "Front of Stanza Living syzran house, Bakul Nagar, Bibwewadi",
+};
 export const experience = [
-  {
-    company: "OneShot Technologies",
-    role: "Founding Engineer",
-    period: "2024 - Present",
-    description: [
-      "Led end-to-end development of a scalable video monitoring platform integrating multi-brand IP cameras using RTSP→WebRTC (go2rtc).",
-      "Architected core system infrastructure (Edge Gateway + VPN), enabling secure, real-time streaming across 10+ remote sites with zero public exposure.",
-      "Established foundational backend systems (Flask, MongoDB), access control, and deployment workflows, contributing to 0 recurring software cost via open-source stack.",
-      "Drove early-stage product decisions, technical architecture, and deployment strategy as part of the founding team.",
-    ],
-  },
   {
     company: "PTC Pune",
     role: "Software Engineering Intern",
-    period: "July 2025 - Present",
+    // period: "July 2025 - Present",
     description: [
       "Built a multi-agent AI system (LangChain) for autonomous task routing across Snowflake + PostgreSQL.",
       "Added Redis intelligent caching cutting LLM calls by 60–90% and reducing latency to 10–50ms (cache hits).",
@@ -40,9 +31,58 @@ export const experience = [
       "Implemented session memory + summarization for scalable multi-tenant deployments.",
     ],
   },
+  {
+    company: "OneShot Technologies",
+    role: "Founding Engineer",
+    // period: "2024 - Present",
+    description: [
+      "Led end-to-end development of a scalable video monitoring platform integrating multi-brand IP cameras using RTSP→WebRTC (go2rtc).",
+      "Architected core system infrastructure (Edge Gateway + VPN), enabling secure, real-time streaming across 10+ remote sites with zero public exposure.",
+      "Established foundational backend systems (Flask, MongoDB), access control, and deployment workflows, contributing to 0 recurring software cost via open-source stack.",
+      "Drove early-stage product decisions, technical architecture, and deployment strategy as part of the founding team.",
+    ],
+  },
 ];
 
 export const projects = [
+  // {
+  //   name: "Personal Portfolio",
+  //   organization: "itsVrushal",
+  //   tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  //   description: [
+  //     "A retro-themed personal portfolio website with neon aesthetics and terminal interface.",
+  //     "Features smooth animations, glowing effects, and interactive components.",
+  //   ],
+  //   link: "https://personal-portfolio-lac-three-62.vercel.app",
+  // },
+  // {
+  //   name: "QR Code Generator",
+  //   organization: "itsVrushal",
+  //   tech: ["React", "TypeScript", "QR Code Library"],
+  //   description: [
+  //     "Web application for generating custom QR codes with various styling options.",
+  //     "Deployed on Vercel with real-time QR code preview.",
+  //   ],
+  //   link: "https://qrcodegenerator-v.vercel.app",
+  // },
+  // {
+  //   name: "ThreeJS Study",
+  //   organization: "itsVrushal",
+  //   tech: ["Three.js", "JavaScript", "3D Graphics"],
+  //   description: [
+  //     "Exploration and learning project for Three.js 3D graphics library.",
+  //     "Contains various 3D rendering experiments and demos.",
+  //   ],
+  // },
+  // {
+  //   name: "WonderfulMate",
+  //   organization: "itsVrushal",
+  //   tech: ["Python", "MIT License"],
+  //   description: [
+  //     "Open source Python project with MIT license.",
+  //     "Contributed to the developer community with reusable code.",
+  //   ],
+  // },
   {
     name: "Multi-Brand Camera Integration System",
     organization: "MMRDA",
@@ -84,14 +124,48 @@ export const projects = [
       "Published in Springer LNNS, ICTIS 2024 (Scopus-indexed).",
     ],
   },
+  {
+    name: "Skin Cancer Detection using Machine Learning",
+    organization: "Vishwakarma Institute of Technology",
+    tech: ["Python", "Machine Learning", "CNN", "Image Processing"],
+    description: [
+      "Developed an early-stage skin disease detection system using ML to assist in diagnosing conditions that are difficult to identify with the naked eye.",
+      "Addresses the shortage of dermatologists, especially in rural areas, by providing automated preliminary screening.",
+      "Uses image-based analysis for accurate, early, and objective diagnosis to overcome disadvantages of traditional visual examination.",
+      "Aims to reduce diagnostic costs and provide timely medical intervention for skin diseases.",
+    ],
+  },
 ];
 
 export const skills = {
   languages: ["Python", "Java", "C"],
-  ai_llm: ["LangChain", "RAG", "LLM Optimization", "Vector Embeddings", "Semantic Search", "MCP", "Multi-Agent Systems"],
-  backend_data: ["Redis", "PostgreSQL", "Snowflake", "SQL", "Session Management", "Distributed Caching", "RTSP", "WebRTC"],
+  ai_llm: [
+    "LangChain",
+    "RAG",
+    "LLM Optimization",
+    "Vector Embeddings",
+    "Semantic Search",
+    "MCP",
+    "Multi-Agent Systems",
+  ],
+  backend_data: [
+    "Redis",
+    "PostgreSQL",
+    "Snowflake",
+    "SQL",
+    "Session Management",
+    "Distributed Caching",
+    "RTSP",
+    "WebRTC",
+  ],
   ml_cv: ["CNN", "YOLOv8", "NLP"],
-  devops: ["Docker", "Docker Compose", "Async Workflows", "Performance Profiling", "Telemetry Logging"],
+  devops: [
+    "Docker",
+    "Docker Compose",
+    "Async Workflows",
+    "Performance Profiling",
+    "Telemetry Logging",
+  ],
 };
 
 export const achievements = [

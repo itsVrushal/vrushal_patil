@@ -156,9 +156,7 @@ const commands: Record<string, React.ReactNode> = {
       {experience.map((exp, i) => (
         <div key={i} className="border-l-2 border-neon-cyan pl-4">
           <p className="text-neon-pink text-lg">{exp.company}</p>
-          <p className="text-neon-cyan">
-            {exp.role} | {exp.period}
-          </p>
+          <p className="text-neon-cyan">{exp.role}</p>
         </div>
       ))}
     </div>
@@ -211,18 +209,14 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
       cmd: "welcome",
       output: (
         <div className="space-y-2 mb-4">
+          <p className="text-neon-yellow">╔════════════════════════╗</p>
           <p className="text-neon-yellow">
-            ╔══════════════════════════════════════════════════════════╗
+            ║ WELCOME TO VRUSHAL'S TERMINAL v1.0
           </p>
           <p className="text-neon-yellow">
-            ║ WELCOME TO VRUSHAL'S TERMINAL v1.0 ║
+            ║ Type 'help' to see available commands
           </p>
-          <p className="text-neon-yellow">
-            ║ Type 'help' to see available commands ║
-          </p>
-          <p className="text-neon-yellow">
-            ╚══════════════════════════════════════════════════════════╝
-          </p>
+          <p className="text-neon-yellow">╚════════════════════════╝</p>
         </div>
       ),
     },
@@ -253,16 +247,16 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
           output: (
             <div className="space-y-2 mb-4">
               <p className="text-neon-yellow">
-                ╔══════════════════════════════════════════════════════════╗
+                ╔═══════════════════════════════════════╗
               </p>
               <p className="text-neon-yellow">
-                ║ WELCOME TO VRUSHAL'S TERMINAL v1.0 ║
+                ║ WELCOME TO VRUSHAL'S TERMINAL v1.0
               </p>
               <p className="text-neon-yellow">
-                ║ Type 'help' to see available commands ║
+                ║ Type 'help' to see available commands
               </p>
               <p className="text-neon-yellow">
-                ╚══════════════════════════════════════════════════════════╝
+                ╚═══════════════════════════════════════╝
               </p>
             </div>
           ),
@@ -295,9 +289,9 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-8"
         >
-          <div className="w-full max-w-8xl h-full bg-retro-darker border-2 border-neon-cyan neon-border rounded-lg overflow-hidden flex flex-col">
+          <div className="w-full max-w-6xl h-[85vh] sm:h-full max-h-[90vh] bg-retro-darker border-2 border-neon-cyan neon-border rounded-lg overflow-hidden flex flex-col overflow-x-hidden">
             <div className="flex items-center justify-between px-4 py-2 bg-neon-cyan/10 border-b-2 border-neon-cyan">
               <div className="flex items-center gap-2">
                 <TerminalIcon className="text-neon-cyan" size={20} />
@@ -315,7 +309,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
 
             <div
               ref={terminalRef}
-              className="flex-1 p-4 overflow-y-auto font-[family-name:var(--font-press-start-2p)] text-xs md:text-sm"
+              className="flex-1 p-2 sm:p-4 overflow-y-auto font-[family-name:var(--font-press-start-2p)] text-[10px] sm:text-xs md:text-sm"
               onClick={() => inputRef.current?.focus()}
             >
               {history.map((item, i) => (

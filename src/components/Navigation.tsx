@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Home, User, Briefcase, Code, Award, Mail } from "lucide-react";
 
@@ -22,6 +22,21 @@ export default function Navigation() {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
+  };
+
+  const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const ripple = document.createElement("span");
+    ripple.className = "ripple";
+    
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    
+    button.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
   };
 
   return (
@@ -59,7 +74,7 @@ export default function Navigation() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-neon-cyan p-2"
+              className="md:hidden text-neon-cyan p-2 mr-[25px]"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </motion.button>
@@ -85,7 +100,7 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="absolute right-0 top-0 bottom-0 w-64 bg-retro-dark border-l-2 border-neon-purple"
+              className="absolute right-[25px] top-0 bottom-0 w-64 bg-retro-dark border-l-2 border-neon-purple"
             >
               <div className="flex justify-end p-4">
                 <button onClick={() => setIsOpen(false)} className="text-neon-pink">
@@ -99,8 +114,11 @@ export default function Navigation() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => scrollToSection(item.href)}
-                    className="flex items-center gap-3 px-4 py-3 text-neon-cyan border-2 border-neon-purple hover:bg-neon-purple/20 transition-colors text-left"
+                    onClick={(e) => {
+                      handleRipple(e);
+                      scrollToSection(item.href);
+                    }}
+                    className="flex items-center gap-3 px-4 py-3 text-neon-cyan border-2 border-neon-purple hover:bg-neon-purple/20 transition-colors text-left relative overflow-hidden"
                   >
                     <item.icon size={20} />
                     {item.label}

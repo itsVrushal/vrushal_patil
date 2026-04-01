@@ -3,8 +3,15 @@
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Calendar } from "lucide-react";
 import { education } from "@/data/portfolio";
+import { address } from "@/data/portfolio";
 
-function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+function GlowText({
+  children,
+  color,
+}: {
+  children: React.ReactNode;
+  color: string;
+}) {
   return (
     <motion.span
       className="inline-block"
@@ -32,8 +39,12 @@ export default function About() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-pink"><GlowText color="#ff71ce">About</GlowText></span>{" "}
-          <span className="text-neon-cyan"><GlowText color="#01cdfe">Me</GlowText></span>
+          <span className="text-neon-pink">
+            <GlowText color="#ff71ce">About</GlowText>
+          </span>{" "}
+          <span className="text-neon-cyan">
+            <GlowText color="#01cdfe">Me</GlowText>
+          </span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -51,7 +62,9 @@ export default function About() {
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xl text-neon-cyan font-bold">{education.institution}</p>
+                  <p className="text-xl text-neon-cyan font-bold">
+                    {education.institution}
+                  </p>
                   <p className="text-neon-yellow">{education.degree}</p>
                 </div>
                 <div className="flex flex-wrap gap-4 text-sm">
@@ -71,7 +84,7 @@ export default function About() {
                 <MapPin className="text-neon-cyan" />
                 Location
               </h3>
-              <p className="text-neon-yellow text-lg">{education.institution.split(',')[0]}, Pune</p>
+              <p className="text-neon-yellow text-lg">{address.place}, Pune</p>
             </div>
           </motion.div>
 
@@ -84,14 +97,15 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold text-neon-cyan mb-4">Who I Am</h3>
             <p className="text-lg text-neon-yellow leading-relaxed mb-4">
-              I'm an AI & Systems Developer passionate about building scalable solutions 
-              that push the boundaries of what's possible. Currently pursuing my B.Tech 
-              in AI & Data Science at VIT Pune.
+              I'm an AI & Systems Developer passionate about building scalable
+              solutions that push the boundaries of what's possible. Currently
+              pursuing my B.Tech in AI & Data Science at VIT Pune.
             </p>
             <p className="text-lg text-neon-yellow leading-relaxed">
-              My expertise lies in multi-agent AI systems, real-time video streaming infrastructure, 
-              and optimizing large language models for production use. I love turning complex 
-              problems into elegant, efficient solutions.
+              My expertise lies in multi-agent AI systems, real-time video
+              streaming infrastructure, and optimizing large language models for
+              production use. I love turning complex problems into elegant,
+              efficient solutions.
             </p>
           </motion.div>
         </div>
@@ -103,7 +117,12 @@ export default function About() {
           transition={{ delay: 0.6 }}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          {["AI/ML", "Systems Design", "Backend Development", "Cloud Architecture"].map((tag, i) => (
+          {[
+            "AI/ML",
+            "Systems Design",
+            "Backend Development",
+            "Cloud Architecture",
+          ].map((tag, i) => (
             <motion.span
               key={tag}
               whileHover={{ scale: 1.1, rotate: Math.random() * 10 - 5 }}

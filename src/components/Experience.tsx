@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 import { Briefcase, Calendar } from "lucide-react";
 import { experience } from "@/data/portfolio";
 
-function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+function GlowText({
+  children,
+  color,
+}: {
+  children: React.ReactNode;
+  color: string;
+}) {
   return (
     <motion.span
       className="inline-block"
@@ -32,8 +38,12 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-cyan"><GlowText color="#01cdfe">Work</GlowText></span>{" "}
-          <span className="text-neon-pink"><GlowText color="#ff71ce">Experience</GlowText></span>
+          <span className="text-neon-cyan">
+            <GlowText color="#01cdfe">Work</GlowText>
+          </span>{" "}
+          <span className="text-neon-pink">
+            <GlowText color="#ff71ce">Experience</GlowText>
+          </span>
         </motion.h2>
 
         <div className="space-y-8">
@@ -57,8 +67,8 @@ export default function Experience() {
                     <p className="text-xl text-neon-yellow">{exp.role}</p>
                   </div>
                   <div className="flex items-center gap-2 text-neon-cyan">
-                    <Calendar size={16} />
-                    <span>{exp.period}</span>
+                    {/* <Calendar size={16} /> */}
+                    {/* <span>{exp.period}</span> */}
                   </div>
                 </div>
 
