@@ -173,6 +173,15 @@ body {
     0 0 40px #ff71ce;
 }
 
+.neon-text-cyan {
+  color: #01cdfe;
+  text-shadow: 
+    0 0 5px #01cdfe,
+    0 0 10px #01cdfe,
+    0 0 20px #01cdfe,
+    0 0 40px #01cdfe;
+}
+
 .neon-text-purple {
   color: #b967ff;
   text-shadow: 
@@ -253,4 +262,43 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #b967ff, #01cdfe);
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #01cdfe;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 10px #01cdfe;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #01cdfe;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 15px rgba(1, 205, 254, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+@media (pointer: fine) {
+  * { cursor: none; }
+}
+
+.interactive {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interactive:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(1, 205, 254, 0.5);
 }

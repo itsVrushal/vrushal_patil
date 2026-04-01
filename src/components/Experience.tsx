@@ -4,6 +4,24 @@ import { motion } from "framer-motion";
 import { Briefcase, Calendar } from "lucide-react";
 import { experience } from "@/data/portfolio";
 
+function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+  return (
+    <motion.span
+      className="inline-block"
+      animate={{
+        textShadow: [
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+          `0 0 20px ${color}, 0 0 40px ${color}`,
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+        ],
+      }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.span>
+  );
+}
+
 export default function Experience() {
   return (
     <section id="experience" className="min-h-screen py-20 px-4 relative">
@@ -14,8 +32,8 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-cyan neon-text">Work</span>{" "}
-          <span className="text-neon-pink neon-text-pink">Experience</span>
+          <span className="text-neon-cyan"><GlowText color="#01cdfe">Work</GlowText></span>{" "}
+          <span className="text-neon-pink"><GlowText color="#ff71ce">Experience</GlowText></span>
         </motion.h2>
 
         <div className="space-y-8">
@@ -27,9 +45,10 @@ export default function Experience() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               className="relative"
+              whileHover={{ scale: 1.01 }}
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-neon-pink via-neon-purple to-neon-cyan" />
-              <div className="ml-8 p-6 border-2 border-neon-purple neon-border-purple hover:border-neon-cyan transition-colors group">
+              <div className="ml-8 p-6 border-2 border-neon-purple neon-border-purple hover:border-neon-cyan transition-colors group interactive">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div>
                     <h3 className="text-2xl font-bold text-neon-pink group-hover:text-neon-cyan transition-colors">

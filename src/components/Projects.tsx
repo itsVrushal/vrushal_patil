@@ -4,6 +4,24 @@ import { motion } from "framer-motion";
 import { FolderGit2 } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
+function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+  return (
+    <motion.span
+      className="inline-block"
+      animate={{
+        textShadow: [
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+          `0 0 20px ${color}, 0 0 40px ${color}`,
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+        ],
+      }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.span>
+  );
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="min-h-screen py-20 px-4 relative">
@@ -14,8 +32,8 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-purple neon-text-purple">My</span>{" "}
-          <span className="text-neon-yellow neon-text">Projects</span>
+          <span className="text-neon-purple"><GlowText color="#b967ff">My</GlowText></span>{" "}
+          <span className="text-neon-yellow"><GlowText color="#fffb96">Projects</GlowText></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -26,8 +44,13 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="p-6 border-2 border-neon-purple neon-border-purple hover:border-neon-pink hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] transition-all group"
+              whileHover={{ 
+                scale: 1.03,
+                rotateX: 2,
+                rotateY: -2,
+                boxShadow: "0 0 40px rgba(255,113,206,0.4)"
+              }}
+              className="p-6 border-2 border-neon-purple neon-border-purple hover:border-neon-pink hover:shadow-[0_0_30px_rgba(255,113,206,0.3)] transition-all group interactive"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="p-3 bg-neon-purple/20 rounded-lg">

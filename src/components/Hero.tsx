@@ -37,12 +37,17 @@ export default function Hero({ onTerminalClick }: HeroProps) {
             className="inline-block text-neon-pink"
             animate={{
               textShadow: [
-                "0 0 10px #ff71ce, 0 0 20px #ff71ce, 0 0 40px #ff71ce",
-                "0 0 20px #ff71ce, 0 0 40px #ff71ce, 0 0 80px #ff71ce",
-                "0 0 10px #ff71ce, 0 0 20px #ff71ce, 0 0 40px #ff71ce",
+                "0 0 10px #ff71ce",
+                "0 0 40px #ff71ce",
+                "0 0 5px #ff71ce",
+                "0 0 50px #ff71ce",
               ],
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           >
             VRUSHAL
           </motion.span>
@@ -51,12 +56,18 @@ export default function Hero({ onTerminalClick }: HeroProps) {
             className="inline-block text-neon-cyan"
             animate={{
               textShadow: [
-                "0 0 10px #01cdfe, 0 0 20px #01cdfe, 0 0 40px #01cdfe",
-                "0 0 20px #01cdfe, 0 0 40px #01cdfe, 0 0 80px #01cdfe",
-                "0 0 10px #01cdfe, 0 0 20px #01cdfe, 0 0 40px #01cdfe",
+                "0 0 10px #01cdfe",
+                "0 0 40px #01cdfe",
+                "0 0 5px #01cdfe",
+                "0 0 50px #01cdfe",
               ],
             }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5
+            }}
           >
             PATIL
           </motion.span>
@@ -74,23 +85,14 @@ export default function Hero({ onTerminalClick }: HeroProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 + i * 0.1 }}
-              className="px-4 py-2 text-lg border-2 border-neon-purple text-neon-purple neon-border-purple"
+              className="px-4 py-2 text-lg border-2 border-neon-purple text-neon-purple neon-border-purple cursor-default hover:scale-105 hover:shadow-[0_0_20px_#b967ff] transition-transform duration-150 ease-out"
             >
               {tag}
             </motion.span>
           ))}
-        </motion.div>
+      </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-xl md:text-2xl text-neon-yellow mb-12 max-w-2xl mx-auto"
-        >
-          Building the future with code, one algorithm at a time.
-        </motion.p>
-
-        <motion.div
+      <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
@@ -120,36 +122,6 @@ export default function Hero({ onTerminalClick }: HeroProps) {
         >
           <ArrowDown className="text-neon-cyan w-8 h-8" />
         </motion.div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="absolute top-10 left-10"
-      >
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2 + i * 0.5,
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
-            className="absolute text-neon-pink"
-            style={{
-              left: `${i * 30}px`,
-              top: `${i * 20}px`,
-              fontSize: `${Math.random() * 10 + 10}px`,
-            }}
-          >
-            ★
-          </motion.div>
-        ))}
       </motion.div>
     </section>
   );

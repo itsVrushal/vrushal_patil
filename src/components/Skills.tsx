@@ -4,6 +4,24 @@ import { motion } from "framer-motion";
 import { Cpu, Database, Code2, Cloud, Brain } from "lucide-react";
 import { skills } from "@/data/portfolio";
 
+function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+  return (
+    <motion.span
+      className="inline-block"
+      animate={{
+        textShadow: [
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+          `0 0 20px ${color}, 0 0 40px ${color}`,
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+        ],
+      }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.span>
+  );
+}
+
 const skillCategories = [
   { name: "Languages", icon: Code2, items: skills.languages, color: "neon-pink" },
   { name: "AI / LLM Systems", icon: Brain, items: skills.ai_llm, color: "neon-cyan" },
@@ -22,8 +40,8 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-cyan neon-text">Tech</span>{" "}
-          <span className="text-neon-pink neon-text-pink">Stack</span>
+          <span className="text-neon-cyan"><GlowText color="#01cdfe">Tech</GlowText></span>{" "}
+          <span className="text-neon-pink"><GlowText color="#ff71ce">Stack</GlowText></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -34,7 +52,12 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 border-2 border-neon-purple neon-border-purple hover:border-neon-cyan transition-colors group"
+              className="p-6 border-2 border-neon-purple neon-border-purple group interactive"
+              whileHover={{ 
+                scale: 1.02, 
+                borderColor: "#01cdfe",
+                boxShadow: "0 0 20px rgba(1, 205, 254, 0.3)"
+              }}
             >
               <div className="flex items-center gap-3 mb-4">
                 <category.icon className={`text-${category.color} group-hover:animate-pulse`} size={24} />

@@ -4,6 +4,24 @@ import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Calendar } from "lucide-react";
 import { education } from "@/data/portfolio";
 
+function GlowText({ children, color }: { children: React.ReactNode; color: string }) {
+  return (
+    <motion.span
+      className="inline-block"
+      animate={{
+        textShadow: [
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+          `0 0 20px ${color}, 0 0 40px ${color}`,
+          `0 0 5px ${color}, 0 0 10px ${color}`,
+        ],
+      }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.span>
+  );
+}
+
 export default function About() {
   return (
     <section id="about" className="min-h-screen py-20 px-4 relative">
@@ -14,8 +32,8 @@ export default function About() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="text-neon-pink neon-text-pink">About</span>{" "}
-          <span className="text-neon-cyan neon-text">Me</span>
+          <span className="text-neon-pink"><GlowText color="#ff71ce">About</GlowText></span>{" "}
+          <span className="text-neon-cyan"><GlowText color="#01cdfe">Me</GlowText></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-8">
