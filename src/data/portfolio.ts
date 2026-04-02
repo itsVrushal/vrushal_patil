@@ -85,7 +85,7 @@ export const projects = [
   // },
   {
     name: "Multi-Brand Camera Integration System",
-    organization: "MMRDA",
+    organization: "Vishwakarma Institute of Technology",
     tech: ["RTSP", "WebRTC", "go2rtc", "WireGuard", "YOLO"],
     description: [
       "Built a scalable live-streaming platform integrating multi-brand IP cameras using RTSP→WebRTC conversion (go2rtc).",
@@ -116,7 +116,7 @@ export const projects = [
   },
   {
     name: "Cyberbullying Detection",
-    organization: "Published in Springer",
+    organization: "Vishwakarma Institute of Technology",
     tech: ["Python", "Scikit-learn", "NLP", "TF-IDF"],
     description: [
       "Benchmarked 9 ML classifiers on Twitter cyberbullying data.",
