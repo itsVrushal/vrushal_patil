@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer, and Tech Enthusiast building the future with code",
   keywords: ["Vrushal Patil", "AI Developer", "Systems Developer", "Portfolio", "Machine Learning", "Full Stack Developer"],
   authors: [{ name: "Vrushal Patil" }],
+  verification: {
+    google: "6X3FEyhlcgVnaZNiE2apDWtadWFd6JJvV11rQzCkGbs",
+  },
   openGraph: {
     title: "Vrushal Patil | AI & Systems Developer",
     description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer",
