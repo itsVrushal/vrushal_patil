@@ -23,7 +23,26 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "Vrushal Patil | AI & Systems Developer",
-  description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer, and Tech Enthusiast",
+  description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer, and Tech Enthusiast building the future with code",
+  keywords: ["Vrushal Patil", "AI Developer", "Systems Developer", "Portfolio", "Machine Learning", "Full Stack Developer"],
+  authors: [{ name: "Vrushal Patil" }],
+  openGraph: {
+    title: "Vrushal Patil | AI & Systems Developer",
+    description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer",
+    url: "https://vrushal-patil.vercel.app",
+    siteName: "Vrushal Patil Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vrushal Patil | AI & Systems Developer",
+    description: "Portfolio of Vrushal Patil - AI/ML Engineer, Systems Developer",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
