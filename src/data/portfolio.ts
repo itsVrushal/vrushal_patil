@@ -84,18 +84,6 @@ export const projects = [
   //   ],
   // },
   {
-    name: "Multi-Brand Camera Integration System",
-    organization: "Vishwakarma Institute of Technology",
-    tech: ["RTSP", "WebRTC", "go2rtc", "WireGuard", "YOLO"],
-    description: [
-      "Built a scalable live-streaming platform integrating multi-brand IP cameras using RTSP→WebRTC conversion (go2rtc).",
-      "Reduced bandwidth usage by~60% via dual-stream optimization; supported real-time 4K streaming.",
-      "Implemented secure VPN (WireGuard/Tailscale) with zero public exposure and end-to-end encryption.",
-      "Designed cost-efficient deployment model achieving~50% hardware savings and 0 software licensing cost.",
-      "Enabled centralized monitoring across 10+ sites with role-based access and audit logging.",
-    ],
-  },
-  {
     name: "Multi-Agentic AI Orchestration Network",
     organization: "PTC",
     tech: ["Python", "LangChain", "Redis", "Snowflake", "PostgreSQL"],
@@ -112,6 +100,18 @@ export const projects = [
     description: [
       "Developed a real-time surveillance pipeline achieving 95% accuracy for platform and escalator safety monitoring.",
       "Containerised and deployed the inference service to process CCTV feeds and trigger automated alerts.",
+    ],
+  },
+  {
+    name: "Multi-Brand Camera Integration System",
+    organization: "Vishwakarma Institute of Technology",
+    tech: ["RTSP", "WebRTC", "go2rtc", "WireGuard", "YOLO"],
+    description: [
+      "Built a scalable live-streaming platform integrating multi-brand IP cameras using RTSP→WebRTC conversion (go2rtc).",
+      "Reduced bandwidth usage by~60% via dual-stream optimization; supported real-time 4K streaming.",
+      "Implemented secure VPN (WireGuard/Tailscale) with zero public exposure and end-to-end encryption.",
+      "Designed cost-efficient deployment model achieving~50% hardware savings and 0 software licensing cost.",
+      "Enabled centralized monitoring across 10+ sites with role-based access and audit logging.",
     ],
   },
   {
