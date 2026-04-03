@@ -31,6 +31,8 @@ const skillCategories = [
 ];
 
 export default function Skills() {
+  const isOdd = skillCategories.length % 2 !== 0;
+
   return (
     <section id="skills" className="min-h-screen py-20 px-4 relative">
       <div className="max-w-5xl mx-auto">
@@ -45,42 +47,50 @@ export default function Skills() {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={category.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-6 border-2 border-neon-purple neon-border-purple group interactive"
-              whileHover={{ 
-                scale: 1.02, 
-                borderColor: "#01cdfe",
-                boxShadow: "0 0 20px rgba(1, 205, 254, 0.3)"
-              }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <category.icon className={`text-${category.color} group-hover:animate-pulse`} size={24} />
-                <h3 className={`text-xl font-bold text-${category.color}`}>{category.name}</h3>
-              </div>
+          {skillCategories.map((category, index) => {
+            const isOdd = skillCategories.length % 2 !== 0;
+            const isLast = index === skillCategories.length - 1;
+            const isFourth = index === 3;
 
-              <div className="flex flex-wrap gap-2">
-                {category.items.map((skill, i) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + i * 0.05 }}
-                    whileHover={{ scale: 1.1 }}
-                    className="px-3 py-1 text-sm border border-neon-cyan/50 text-neon-cyan hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={category.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`p-6 border-2 border-neon-purple neon-border-purple group interactive ${
+                  isOdd && isLast ? 'lg:col-start-2' : ''
+                }`}
+                whileHover={{
+                  scale: 1.02,
+                  borderColor: "#01cdfe",
+                  boxShadow: "0 0 20px rgba(1, 205, 254, 0.3)"
+                }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <category.icon className={`text-${category.color} group-hover:animate-pulse`} size={24} />
+                  <h3 className={`text-xl font-bold text-${category.color}`}>{category.name}</h3>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {category.items.map((skill, i) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + i * 0.05 }}
+                      whileHover={{ scale: 1.1 }}
+                      className="px-3 py-1 text-sm border border-neon-cyan/50 text-neon-cyan hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all cursor-default"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

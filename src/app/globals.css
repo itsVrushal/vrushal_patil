@@ -132,6 +132,17 @@ body {
   }
 }
 
+@keyframes terminal-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: 0 0 5px #ff71ce, 0 0 10px #ff71ce, 0 0 20px #ff71ce, 0 0 40px #ff71ce;
+    border-color: #ff71ce;
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+    border-color: #ff71ce80;
+  }
+}
+
 @keyframes rainbow {
   0% { color: #ff71ce; }
   25% { color: #01cdfe; }
