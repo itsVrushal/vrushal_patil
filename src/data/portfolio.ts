@@ -20,7 +20,7 @@ export const address = {
 };
 export const experience = [
   {
-    company: "PTC Pune",
+    company: "PTC Inc.",
     role: "Software Engineering Intern",
     // period: "July 2025 - Present",
     description: [

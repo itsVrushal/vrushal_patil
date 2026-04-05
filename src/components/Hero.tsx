@@ -153,7 +153,7 @@ export default function Hero({ onTerminalClick }: HeroProps) {
               className="cursor-pointer relative inline-block"
             >
               <div className="absolute -inset-0.5 bg-neon-pink/20 blur-sm rounded-sm"></div>
-              <div className="relative -translate-y-4 px-1 py-2 bg-retro-darker border-2 border-neon-pink neon-border-pink rounded-sm transform -rotate-2">
+              <div className="relative -translate-y-4 px-2 py-2 bg-retro-darker border-2 border-neon-pink neon-border-pink rounded-sm transform -rotate-2">
                 <span
                   className="text-base font-bold text-neon-pink"
                   style={{
